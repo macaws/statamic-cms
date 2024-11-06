@@ -1,15 +1,10 @@
 @php use function Statamic\trans as __; @endphp
 
-<div class="card p-0 h-full">
+<x-statamic::card>
     <header class="flex justify-between items-center p-4 border-b dark:bg-dark-650 dark:border-b dark:border-dark-900">
-        <h2 class="flex items-center">
-            <div class="h-6 w-6 rtl:ml-2 ltr:mr-2 text-gray-800 dark:text-dark-200">
-                @cp_svg('icons/light/loading-bar')
-            </div>
-            <span>{{ __('Updates') }}</span>
-        </h2>
+        <h2>{{ __('Updates') }}</h2>
         @if ($count)
-            <a href="{{ cp_route('updater') }}" class="badge-sm bg-green-600 text-white">
+            <a href="{{ cp_route('updater') }}" class="rounded-md bg-slate-50 px-2 py-1.5 text-xs font-medium ring-1 ring-inset ring-slate-500/20 whitespace-nowrap antialiased">
                 {{ trans_choice('1 update available|:count updates available', $count) }}
             </a>
         @endif
@@ -31,4 +26,4 @@
             </div>
         @endforeach
     </section>
-</div>
+</x-statamic::card>

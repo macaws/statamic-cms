@@ -10,7 +10,7 @@
 
 .bard-editor .ProseMirror {
     @apply p-2 min-h-40 text-sm leading-tight;
-    @apply @md/bard:p-2 text-md leading-normal;
+    @apply @md/bard:p-2 text-base leading-normal;
     @apply @lg/bard:p-4;
     &:focus {
         @apply ring-2 ring-inset ring-blue-200 dark:ring-blue-600;

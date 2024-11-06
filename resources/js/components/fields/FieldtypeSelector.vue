@@ -26,7 +26,7 @@
                                 <div class="p-2 flex items-center rtl:border-l ltr:border-r border-gray-500 dark:border-dark-900 group-hover:border-gray-600 dark:group-hover:border-dark-950 bg-gray-200 dark:bg-dark-600 rtl:rounded-r ltr:rounded-l">
                                     <svg-icon class="h-5 w-5 text-gray-800 dark:text-dark-150" :name="fieldtype.icon.startsWith('<svg') ? fieldtype.icon : `light/${fieldtype.icon}`" default="light/generic-field"></svg-icon>
                                 </div>
-                                <span class="rtl:pr-3 ltr:pl-3 text-gray-800 dark:text-dark-150 text-md group-hover:text-gray-900 dark:group-hover:text-dark-100">{{ fieldtype.text }}</span>
+                                <span class="rtl:pr-3 ltr:pl-3 text-gray-800 dark:text-dark-150 text-base group-hover:text-gray-900 dark:group-hover:text-dark-100">{{ fieldtype.text }}</span>
                             </button>
                         </div>
                     </div>

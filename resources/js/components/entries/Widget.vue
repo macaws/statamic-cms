@@ -18,7 +18,7 @@
                     <template slot="cell-title" slot-scope="{ row: entry }">
                         <div class="flex items-center">
                             <span class="little-dot rtl:ml-2 ltr:mr-2" v-tooltip="getStatusLabel(entry)" :class="getStatusClass(entry)" v-if="! columnShowing('status')" />
-                            <a :href="entry.edit_url">{{ entry.title }}</a>
+                            <a :href="entry.edit_url" :title="entry.title" class="line-clamp-1">{{ entry.title }}</a>
                         </div>
                     </template>
                     <template slot="cell-status" slot-scope="{ row: entry }">
@@ -27,7 +27,7 @@
                 </data-list-table>
                 <data-list-pagination
                     v-if="meta.last_page != 1"
-                    class="py-2 border-t bg-gray-200 rounded-b-lg text-sm dark:bg-dark-650 dark:border-gray-900"
+                    class="py-2 border-t text-sm dark:bg-dark-650 dark:border-gray-900"
                     :resource-meta="meta"
                     @page-selected="selectPage"
                     :scroll-to-top="false"

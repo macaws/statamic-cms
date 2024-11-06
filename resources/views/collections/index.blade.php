@@ -15,11 +15,13 @@
             @endcan
         </div>
 
-        <collection-list
-            :initial-rows="{{ json_encode($collections) }}"
-            :initial-columns="{{ json_encode($columns) }}"
-            :endpoints="{}">
-        </collection-list>
+        <x-statamic::card class="p-3">
+            <collection-list
+                :initial-rows="{{ json_encode($collections) }}"
+                :initial-columns="{{ json_encode($columns) }}"
+                :endpoints="{}">
+            </collection-list>
+        </x-statamic::card>
 
     @else
 

@@ -1,6 +1,6 @@
 <template>
     <data-list ref="dataList" :columns="columns" :rows="items">
-        <div class="card overflow-hidden p-0" slot-scope="{ filteredRows: rows }">
+        <div slot-scope="{ filteredRows: rows }">
             <data-list-table :rows="rows">
                 <template slot="cell-title" slot-scope="{ row: collection }">
                     <a :href="collection.available_in_selected_site ? collection.entries_url : collection.edit_url">{{ __(collection.title) }}</a>

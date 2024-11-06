@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .tabs-container {
-    @apply w-full border-b dark:border-dark-500 text-md relative flex mb-6;
+    @apply w-full border-b dark:border-dark-500 text-base relative flex mb-6;
 
    .fade-left, .fade-right {
         @apply absolute w-4 inset-y-0 from-gray-300 dark:from-dark-800 pointer-events-none z-2;

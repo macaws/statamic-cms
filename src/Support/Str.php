@@ -256,6 +256,20 @@ class Str
         return $widths[$width] ?? 'w-full';
     }
 
+    public static function tailwindSpanClass($width)
+    {
+        $widths = [
+            25 => 'w-full',
+            33 => 'w-full',
+            50 => 'w-full',
+            66 => 'w-full',
+            75 => 'w-full',
+            100 => 'w-full',
+        ];
+
+        return $widths[$width] ?? 'w-full';
+    }
+
     /**
      * Output either literal "true" or "false" strings given a boolean.
      */

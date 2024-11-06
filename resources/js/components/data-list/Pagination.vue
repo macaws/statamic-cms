@@ -10,8 +10,10 @@
 
         <ul v-if="hasMultiplePages" class="pagination" :class="{'pagination-inline': inline}">
 
-            <li v-if="hasPrevious">
-                <a @click="selectPreviousPage"><span class="text-xs" v-html="direction === 'ltr' ? '&larr;' : '&rarr;'"></span></a>
+            <li>
+                <a @click="selectPreviousPage" :disabled="! hasPrevious">
+                    <span class="text-xs" v-html="direction === 'ltr' ? '&larr;' : '&rarr;'"></span>
+                </a>
             </li>
 
             <li

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\Middleware\TrimStrings;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Facades;
 use Statamic\Facades\Addon;
@@ -44,6 +45,8 @@ class AppServiceProvider extends ServiceProvider
             ->pushMiddleware(\Statamic\Http\Middleware\StopImpersonating::class);
 
         $this->loadViewsFrom("{$this->root}/resources/views", 'statamic');
+
+        Blade::componentNamespace('Statamic\\View\\Components', 'statamic');
 
         collect($this->configFiles)->each(function ($config) {
             $this->publishes(["{$this->root}/config/$config.php" => config_path("statamic/$config.php")], 'statamic');
@@ -130,7 +133,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton(\Statamic\Contracts\Data\DataRepository::class, function ($app) {
-            return (new \Statamic\Data\DataRepository)
+            return (new \Statamic\Data\DataRepository())
                 ->setRepository('entry', \Statamic\Contracts\Entries\EntryRepository::class)
                 ->setRepository('term', \Statamic\Contracts\Taxonomies\TermRepository::class)
                 ->setRepository('collection', \Statamic\Contracts\Entries\CollectionRepository::class)
@@ -141,7 +144,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton(\Statamic\Fields\BlueprintRepository::class, function () {
-            return (new \Statamic\Fields\BlueprintRepository)
+            return (new \Statamic\Fields\BlueprintRepository())
                 ->setDirectory(resource_path('blueprints'))
                 ->setFallback('default', function () {
                     return \Statamic\Facades\Blueprint::makeFromFields([
@@ -151,7 +154,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton(\Statamic\Fields\FieldsetRepository::class, function () {
-            return (new \Statamic\Fields\FieldsetRepository)
+            return (new \Statamic\Fields\FieldsetRepository())
                 ->setDirectory(resource_path('fieldsets'));
         });
 
@@ -170,7 +173,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->instance('statamic.query-scopes', collect());
 
         $this->app->bind('statamic.imaging.guzzle', function () {
-            return new \GuzzleHttp\Client;
+            return new \GuzzleHttp\Client();
         });
     }
 

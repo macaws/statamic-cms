@@ -5,9 +5,9 @@
 
 @section('content')
 
-    <div class="widgets @container flex flex-wrap -mx-4 py-2">
+    <div class="widgets @container grid sm:grid-cols-2 items-start gap-8 py-6" x-masonry.wait.700>
         @foreach($widgets as $widget)
-            <div class="widget w-full md:{{ Statamic\Support\Str::tailwindWidthClass($widget['width']) }} {{ $widget['classes'] }} mb-8 px-4">
+            <div class="widget w-full md:{{ Statamic\Support\Str::tailwindSpanClass($widget['width']) }} {{ $widget['classes'] }}">
                 {!! $widget['html'] !!}
             </div>
         @endforeach

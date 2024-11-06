@@ -1,6 +1,6 @@
 @php use function Statamic\trans as __; @endphp
 
-<div class="card card-lg p-0 content">
+<x-statamic::card class="p-6">
     <header>
         <h1>{{ __('statamic::messages.getting_started_widget_header') }}</h1>
         <p>{{ __('statamic::messages.getting_started_widget_intro') }}</p>
@@ -44,4 +44,4 @@
             </div>
         </a>
     </div>
-</div>
+</x-statamic::card>

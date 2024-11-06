@@ -193,7 +193,7 @@
 	}
 
 	span {
-        @apply text-md shrink-0 font-normal;
+        @apply text-lg shrink-0 font-normal;
 	}
 }
 

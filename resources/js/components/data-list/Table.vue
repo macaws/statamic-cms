@@ -12,15 +12,17 @@
                         'current-column': sharedState.sortColumn === column.field,
                         'sortable-column': column.sortable === true,
                         'cursor-not-allowed': !sortable,
-                        'rtl:text-left ltr:text-right rtl:pl-8 ltr:pr-8': column.numeric,
+                        'text-right rtl:text-left flex justify-end rtl:justify-start': column.numeric,
                     }"
-                    class="group rounded-none"
+                    class="rounded-none"
                     @click.prevent="changeSortColumn(column.field)"
                 >
-                    <span v-text="__(column.label)" />
-                    <svg v-if="column.sortable" :class="[sharedState.sortDirection, {'opacity-100 pointer-events-none': sharedState.sortColumn === column.field}]" height="8" width="8" viewBox="0 0 10 6.5" class="rtl:mr-1 ltr:ml-1 opacity-0 group-hover:opacity-100">
-                        <path d="M9.9,1.4L5,6.4L0,1.4L1.4,0L5,3.5L8.5,0L9.9,1.4z" fill="currentColor"/>
-                    </svg>
+                    <button type="button" class="sortable-control group">
+                        <span v-text="__(column.label)" />
+                        <svg v-if="column.sortable" :class="[sharedState.sortDirection, {'opacity-100 pointer-events-none': sharedState.sortColumn === column.field}]" height="8" width="8" viewBox="0 0 10 6.5" class="opacity-0 group-hover:opacity-100 text-slate-500">
+                            <path d="M9.9,1.4L5,6.4L0,1.4L1.4,0L5,3.5L8.5,0L9.9,1.4z" fill="currentColor"/>
+                        </svg>
+                    </button>
                 </th>
                 <th class="type-column" v-if="type">
                     <template v-if="type === 'entries'">{{ __('Collection') }}</template>

@@ -21,7 +21,7 @@
         Form Inputs
     </h2>
 
-    <div class="shadow bg-white p-8 rounded-lg mb-16">
+    <x-statamic::card class="p-6">
         <div class="mb-4">
             <input type="text" placeholder="unstyled">
         </div>
@@ -53,7 +53,7 @@
         <div class="mb-4">
             <v-select :multiple="true" :options="['Nintendo 64', 'Super Nintendo', 'Nintendo Gameboy', 'Sega Genesis', 'Sega Game Gear', 'Atari 2600']"></v-select>
         </div>
-    </div>
+    </x-statamic::card>
 
     <h2 class="mb-2">Typography</h2>
     <div class="shadow bg-white p-8 rounded-lg overflow-hidden mb-16">

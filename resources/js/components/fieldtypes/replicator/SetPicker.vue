@@ -29,7 +29,7 @@
                     <div v-if="item.type === 'group'" @click="selectGroup(item.handle)" class="flex items-center group px-2 py-1.5 rounded-md">
                         <svg-icon :name="groupIconName(item.icon)" :directory="iconBaseDirectory" class="h-9 w-9 rounded bg-white dark:bg-dark-650 border border-gray-600 dark:border-dark-800 rtl:ml-2 ltr:mr-2 p-2 text-gray-800 dark:text-dark-175" />
                         <div class="flex-1">
-                            <div class="text-md font-medium text-gray-800 dark:text-dark-175 truncate w-52">{{ __(item.display || item.handle) }}</div>
+                            <div class="text-base font-medium text-gray-800 dark:text-dark-175 truncate w-52">{{ __(item.display || item.handle) }}</div>
                             <div v-if="item.instructions" class="text-2xs text-gray-700 dark:text-dark-175 truncate w-52">{{ __(item.instructions) }}</div>
                         </div>
                         <svg-icon name="micro/chevron-right-thin" class="text-gray-600 group-hover:text-dark-800 dark:group-hover:text-dark-175" />
@@ -37,7 +37,7 @@
                     <div v-if="item.type === 'set'" @click="addSet(item.handle)" class="flex items-center group px-2 py-1.5 rounded-md">
                         <svg-icon :name="setIconName(item.icon)" :directory="iconBaseDirectory" class="h-9 w-9 rounded bg-white dark:bg-dark-650 border border-gray-600 dark:border-dark-800 rtl:ml-2 ltr:mr-2 p-2 text-gray-800 dark:text-dark-175" />
                         <div class="flex-1">
-                            <div class="text-md font-medium text-gray-800 dark:text-dark-175 truncate w-52">{{ __(item.display || item.handle) }}</div>
+                            <div class="text-base font-medium text-gray-800 dark:text-dark-175 truncate w-52">{{ __(item.display || item.handle) }}</div>
                             <div v-if="item.instructions" class="text-2xs text-gray-700 dark:text-dark-175 truncate w-52">{{ __(item.instructions) }}</div>
                         </div>
                     </div>

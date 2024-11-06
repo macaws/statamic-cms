@@ -3,30 +3,44 @@
    ========================================================================== */
 
 .pagination {
-    @apply flex justify-center shadow dark:shadow-dark items-center list-none p-0 rounded overflow-hidden;
+    @apply flex justify-center shadow-sm dark:shadow-dark items-center list-none p-0 rounded-md;
+
+    li {
+        &:first-child a {
+            @apply rounded-l-md ml-0;
+        }
+
+        &:last-child a {
+            @apply rounded-r-md;
+        }
+    }
 
 	li a {
-        @apply h-full px-3 py-2 rtl:border-l ltr:border-r dark:border-dark-900 bg-white dark:bg-dark-600 block text-gray-800 dark:text-dark-150;
+        @apply ring-1 ring-slate-300 ring-inset -ml-px h-full px-3 py-2 bg-white dark:bg-dark-600 inline-block text-slate-800 dark:text-dark-150;
 
 		&:hover {
-            @apply bg-gray-100 dark:bg-dark-700 text-gray-800 dark:text-dark-100;
+            @apply bg-slate-50 dark:bg-dark-700 text-slate-800 dark:text-dark-100;
 		}
+
+        &[disabled] {
+            @apply cursor-not-allowed bg-white text-slate-300 ring-slate-200;
+        }
 	}
 
 	li > .unclickable {
-        @apply h-full px-3 py-2 rtl:border-l ltr:border-r dark:border-dark-900 bg-white dark:bg-dark-600 block text-gray-500 dark:text-dark-200;
+        @apply h-full px-3 py-2 rtl:border-l ltr:border-r dark:border-dark-900 bg-white dark:bg-dark-600 block text-slate-500 dark:text-dark-200;
 
 		&:hover {
             cursor: text;
 		}
 	}
 
-	li:last-child a {
+	/* li:last-child a {
 		@apply rtl:border-l-0 ltr:border-r-0;
-	}
+	} */
 
 	li.current a {
-        @apply bg-gray-100 dark:bg-dark-700 text-blue dark:text-dark-blue-100 shadow-inner;
+        @apply bg-slate-100 dark:bg-dark-700 text-blue dark:text-dark-blue-100 shadow-inner;
 	}
 }
 

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Toast from './mixins/Toast.js';
 import Statamic from './components/Statamic.js';
 import Alpine from 'alpinejs'
+import masonry from 'alpinejs-masonry';
 import * as Globals from './bootstrap/globals'
 import { default as underscore } from 'underscore'
 import Cookies from 'cookies-js';
@@ -59,6 +60,7 @@ Statamic.booting(Statamic => {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = Statamic.$config.get('csrfToken');
 });
 
+Alpine.plugin(masonry);
 Alpine.start()
 
 Vue.prototype.$axios = axios;
