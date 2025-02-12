@@ -11,3 +11,9 @@ resources/dist
 resources/dist-frontend
 composer.lock
 .env
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
